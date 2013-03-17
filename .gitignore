@@ -1,0 +1,8 @@
+*.pyc
+*.swp
+.DS_Store
+.env
+dev.db
+localsettings.py
+reset_dev_db.sh
+
