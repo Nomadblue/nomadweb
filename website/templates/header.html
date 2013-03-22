@@ -1,0 +1,90 @@
+{% load staticfiles i18n %}
+
+<!-- begin .header-->
+<header class="header  clearfix"> <img src="{% static "img/nomadblue_logo.png" %}" class="print logo" alt="name of company" />
+	<div class="container"> 
+		
+		<!-- begin #main_menu -->
+		<nav id="main_menu">
+			<ul class="accordmobile">
+				<li><a href="#">Home</a></li>
+				<li><a href="#">Contact</a></li>
+        {% comment %}
+				<li class="parent"><a href="javascript:void(0)">Goodies<i></i></a>
+					<ul>
+						<li><a href="tall-logo.html">Tall Logo Header</a></li>
+						<li><a href="alternative-header.html">Alternative Header</a></li>
+						<li><a href="columns.html">Inner Columns</a></li>
+						<li><a href="toggles.html">Toggles</a></li>
+						<li><a href="tabs.html">Tabs</a></li>
+						<li><a href="responsive-tables.html">Responsive Tables</a></li>
+						<li><a href="figures-images.html">Figures and Images</a></li>
+						<li><a href="icons.html">Icons</a></li>
+						<li><a href="typography-elements.html">Typography & Elements</a></li>
+						<li><a href="hero-equal-height-columns.html">Hero Equal Height Cols</a></li>
+						<li><a href="misc-components.html">Misc Bootstrap Stuff</a></li>
+						<li><a href="bootstrap-thumbnails.html">Bootstrap's Thumbnails</a></li>
+						<li><a href="rotating-testimonials-feature.html">Rotating Testimonials</a></li>
+					</ul>
+				</li>
+				<li class="parent"><a href="javascript:void(0)">Portfolio<i></i></a>
+					<ul>
+						<li><a href="portfolio-masonry.html">Filtered Grid</a></li>
+						<li><a href="portfolio-lightbox.html">Lightbox (filtered)</a></li>
+						<li><a href="portfolio-single.html">Single Item (image slider)</a></li>
+						<li><a href="portfolio-single-no-slider.html">Single Item (no slider)</a></li>
+						<li><a href="portfolio-video.html">Single Item (video slider)</a></li>
+						<li><a href="image-gallery.html">Image Gallery</a></li>
+					</ul>
+				</li>
+				<li class="parent"><a href="javascript:void(0)">Blog<i></i></a>
+					<ul>
+						<li><a href="blog-traditional-summary.html">Traditional Summary</a></li>
+						<li><a href="blog-traditional-summary-3col.html">Traditional Summary 3 columns</a></li>
+						<li><a href="blog.html">Masonry Summary</a></li>
+						<li><a href="blog-single.html">Single Post</a></li>
+						<li><a href="blog-single-with-mp3.html">Audio and Video Post</a></li>
+						<li><a href="blog-single-image-slider.html">Image Slider Post</a></li>
+					</ul>
+				</li>
+				<li class="parent active"><a href="javascript:void(0)">Pages<i></i></a>
+					<ul>
+						<li><a href="index.html">Home 1 Lemmon</a></li>
+						<li><a href="index-flex-light.html">Home 2 Flex Light</a></li>
+						<li><a href="index-flex-dark.html">Home 3 Flex Dark</a></li>
+						<li><a href="index-flex-boxed.html">Home 4 Flex Boxed</a></li>
+						<li><a href="index-sequence-js.html">Home 5 Animated</a></li>
+						<li><a href="index-masonry.html">Home 6 Masonry</a></li>
+						<li class="active"><a href="home-7-whatever.html">Home 7 Whatever</a></li>
+						<li><a href="two-columns-right-sidebar.html">Two Columns Right</a></li>
+						<li><a href="two-columns-left-sidebar.html">Two Columns Left </a></li>
+						<li><a href="holy-grail-three-columns.html">Holy Grail (3 Col)</a></li>
+						<li><a href="contemporary-three-columns.html">Contemporary (3 Col)</a></li>
+						<li><a href="pricing-tables.html">Pricing Tables</a></li>
+						<li><a href="about.html">About</a></li>
+						<li><a href="page-not-found-404.html">404</a></li>
+						<li><a href="faq.html">FAQ</a></li>
+						<li><a href="testimonials.html">Testimonials</a></li>
+						<li><a href="register.html">Register</a></li>
+						<li><a href="register-exended.html">Register Extended</a></li>
+						<li><a href="login.html">Login</a></li>
+						<li><a href="privacy.html">Privacy Policy</a></li>
+					</ul>
+				</li>
+				<li><a href="contact.html">Contact</a></li>
+				<li><a href="instructions.html">Instructions</a></li>
+        {% endcomment %}
+			</ul>
+		</nav>
+		<!-- close / #main_menu --> 
+		
+		<!-- begin #logo -->
+		<div id="logo"> <a href="index.html"><img alt="" src="{% static "img/nomadblue_logo.png" %}" /><em>Entrepreneurship, strategy and web development for startups</em><!--effing ie7 support--></a> </div>
+		<!-- end #logo --> 
+		
+	</div>
+	<!-- close / .container--> 
+</header>
+<!-- close /.header --> 
+
+

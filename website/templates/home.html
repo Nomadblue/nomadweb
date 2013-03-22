@@ -1,0 +1,169 @@
+{% extends "base.html" %}
+
+{% load staticfiles i18n %}
+
+{% block container %}
+	<div class="hero-unit center no-border">
+		<div class="container">
+      <h1>We invest in talent to create disrupting businesses. We have the tools and the expertise for your ideas.</h1>
+		</div>
+		<!--close container--> 
+	</div>
+	<!--close hero-unit-->
+	<div class="container clearfix" id="main-content"> 
+		<!--begin main content-->
+		<div class="row-fluid"> 
+			<!-- Begin image slider -->
+			<div class="flexslider image-slider span6">
+				<ul class="slides">
+					<!--begin slide content inside each li tag-->
+          <li> <img alt="" src="{% static "img/city_lights.jpg" %}" />
+						<div class="caption no-border">
+							<p>Your project can reach a global audience instantly. Let us build your next social network website or smartphone app.</p>
+						</div>
+					</li>
+          <li> <img alt="" src="{% static "img/santiago_andes.jpg" %}" />
+						<div class="caption no-border">
+							<p>We're based in Santiago de Chile, the fascinating new capital for startups and ventures in Latin America.</p>
+						</div>
+					</li>
+				</ul>
+			</div>
+			<!-- end  .flexslider. image-slider span6 -->
+			<div class="span6">
+				<h2 class="short_headline"><span>Our secret sauce for success</span></h2>
+				<p>From the first line of code or sketch until the long-awaited launch day, we work hand-in-hand with you to listen and understand better your ideas and needs every day. Our company is not an island, it's an extension of your own team territory.</p>
+				<p class="right"><a href="#" class="btn btn-small btn-very-subtle">More &rarr;</a></p>
+			</div>
+			<!--close span6--> 
+		</div>
+		<!--close row-fluid-->
+		<div class="row-fluid">
+			<section class="call-to-action trad clearfix">
+				<div class="message">
+					<h3>About us</h3>
+					<p>We are a group of technology enthusiasts building applications and first-class web tools. Experienced in entrepreneurship and lean methodologies, we have already helped a lot of startups and companies to transform their projects into something real.</p>
+				</div>
+				<div class="action"> <a href="register.html" class="btn-primary btn btn-large">30 Day Free Trial &nbsp;<i class="icon-circle-arrow-right icon-white"></i></a> </div>
+			</section>
+		</div>
+		<!--close row-fluid-->
+		<div class="row-fluid center">
+			<div class="span3"> <a class="biggieicon" href="#"><i class="icon-paper-clip"></i></a>
+				<h4 class="border-b">Hola Startups!</h4>
+				<p class="bumpdown">Startups need a flexible technical roadmap to prototype in an agile way, along with developers who are able to adapt to changes quick.This is why our modus operandi is focused in guiding our customers through all the different stages.</p>
+				<p class="center"><a href="#" class="btn btn-small btn-very-subtle">More &rarr;</a></p>
+			</div>
+			<div class="span3"> <a class="biggieicon" href="#"><i class="icon-wrench"></i></a>
+				<h4 class="border-b">Open source</h4>
+				<p class="bumpdown">We love it and we use it extensively. We write most of our stuff in Python and take advantage of the excellent and mature Django framework to produce API-based MVPs in a record time, ready to be consumed by front-end desktop GUIs, web UIs or mobile apps.</p>
+				<p class="center"><a href="#" class="btn btn-small btn-very-subtle">More &rarr;</a></p>
+			</div>
+			<div class="span3"> <a class="biggieicon" href="#"><i class="icon-refresh"></i></a>
+				<h4 class="border-b">Flexible but unbreakable</h4>
+				<p class="bumpdown">Our core team integrates professionales spanning different disciplines leading our client's projects and managing a variable set of collaborators. This structure allows us to be like bamboo, like... water. <a href="#">"Be water, my friend"!</a></p>
+				<p class="center"><a href="#" class="btn btn-small btn-very-subtle">More &rarr;</a></p>
+			</div>
+			<div class="span3"> <a class="biggieicon" href="#"><i class="icon-comments-alt"></i></a>
+				<h4 class="border-b">Let's talk</h4>
+				<p class="bumpdown">Nomadblue wants to become a leader in development and web-based technology implementation. Apps for mobile devices, social networks or e-commerce platforms, you name it. If you need experts to incorporate into your business plan, let's talk.</p>
+				<p class="center"><a href="#" class="btn btn-small btn-very-subtle">More &rarr;</a></p>
+			</div>
+		</div>
+		<!--close row-fluid -->
+		<hr class="empty" />
+		<h3 class="short_headline"><span>portfolio of latest works</span></h3>
+		<div class="row-fluid">
+			<div class="span6">
+        <p><img class="alignleft img-polaroid" src="{% static "img/blinkme_logo.png" %}">BlinkMe is a photo-sharing app that allows you to send images safely. Once opened, they can only be looked at for 3 seconds before they disappear, leaving no trace.</p>
+        <hr>
+        <p><img class="alignleft img-polaroid" src="{% static "img/canubring_logo.png" %}">Canubring is a social network that connects people who need to buy something from any place in the world, with others who can bring it on their trips.</p>
+			</div>
+			<div class="span6">
+        <p><img class="alignleft img-polaroid" src="{% static "img/dealirius_logo.png" %}">Dealirius is a deals search engine that scans the main collective buying sites (like Groupon, LetsBonus or Groupalia) and offers their discounts in just one place.</p>
+        <hr>
+        <p><img class="alignleft img-polaroid" src="{% static "img/eduquia_logo.png" %}">Eduquia is an education platform offering online apps and web tools for students, teachers and the academic ecosytem, and aiming to bring on the learning revolution.</p>
+			</div>
+        {% comment %}
+			<div class="span4 offset1"> 
+				<!-- ****** TABBED CONTENT ******-->
+				<aside class="widget">
+					<h5 class="short_headline"><span>Blog</span></h5>
+					<div class="sidebar-tabs">
+						<ul class="tabs">
+							<li class="tab"><a href="#tab-latest">Latest</a></li>
+							<li class="tab"><a href="#tab-popular">Popular</a></li>
+							<li class="tab"><a href="#tab-tags">Tags</a></li>
+						</ul>
+						<div class="panels">
+							<div id="tab-latest">
+								<ul class="blogposts clearfix">
+									<!--required class-->
+									<li> <span class="date"> <span class="month">Jan</span> <span class="day">13</span> <span class="year">2012</span> </span>
+										<h3><a href="blog-single.html">We frequently maximize turn-key infrastructures</a></h3>
+										<a href="blog-single.html">
+										<p> Your budget for unleashing should be at least twice...</p>
+										</a> </li>
+									<li> <span class="date"> <span class="month">Nov</span> <span class="day">28</span> <span class="year">2012</span> </span>
+										<h3><a href="blog-single.html">Split of a Second</a></h3>
+										<a href="blog-single.html">
+										<p> Wingsuit World Champion Espen Fadnes and...</p>
+										</a> </li>
+									<li> <span class="date"> <span class="month">Sep</span> <span class="day">18</span> <span class="year">2012</span> </span>
+										<h3><a href="blog-single.html">Latte Art</a></h3>
+										<a href="blog-single.html">
+										<p> Creating art with latte coffee. 
+											Lorem ipsum dolor sit amet... </p>
+										</a> </li>
+									<li> <span class="date"> <span class="month">Mar</span> <span class="day">3</span> <span class="year">2012</span> </span>
+										<h3><a href="blog-single.html">Lorem ipsum dolor sit amet</a></h3>
+										<a href="blog-single.html">
+										<p>senectus et netus et malesuada fames ac turpis egestas...</p>
+										</a> </li>
+								</ul>
+							</div>
+							<!-- close #tab-latest-->
+							<div id="tab-popular"> 
+								<!--begin tab-popular-->
+								<ul class="blogposts clearfix">
+									<!--required class-->
+									<li> <span class="date"> <span class="month">Jan</span> <span class="day">13</span> <span class="year">2012</span> </span>
+										<h3><a href="blog-single.html">We frequently maximize turn-key infrastructures</a></h3>
+										<a href="blog-single.html">
+										<p> Your budget for unleashing should be at least twice...</p>
+										</a> </li>
+									<li> <span class="date"> <span class="month">Nov</span> <span class="day">28</span> <span class="year">2012</span> </span>
+										<h3><a href="blog-single.html">Split of a Second</a></h3>
+										<a href="blog-single.html">
+										<p> Wingsuit World Champion Espen Fadnes and...</p>
+										</a> </li>
+									<li> <span class="date"> <span class="month">Sep</span> <span class="day">18</span> <span class="year">2012</span> </span>
+										<h3><a href="blog-single.html">Latte Art</a></h3>
+										<a href="blog-single.html">
+										<p> Creating art with latte coffee. 
+											Lorem ipsum dolor sit amet... </p>
+										</a> </li>
+									<li> <span class="date"> <span class="month">Mar</span> <span class="day">3</span> <span class="year">2012</span> </span>
+										<h3><a href="blog-single.html">Lorem ipsum dolor sit amet</a></h3>
+										<a href="blog-single.html">
+										<p>senectus et netus et malesuada fames ac turpis egestas...</p>
+										</a> </li>
+								</ul>
+							</div>
+							<!-- close #tab-popular-->
+							<div id="tab-tags" class="tag-wrapper"> <a href="#" class="tag">business</a> <a href="#" class="tag">fun</a> <a href="#" class="tag">food</a> <a href="#" class="tag">design</a> <a href="#" class="tag">old</a> <a href="#" class="tag">recent</a> <a href="#" class="tag">junk</a> <a href="#" class="tag">important</a> <a href="#" class="tag">fonts</a> <a href="#" class="tag">css3</a> <a href="#" class="tag">php</a> <a href="#" class="tag">seamless</a> <a href="#" class="tag">complicated</a> </div>
+							<!-- close #tab-tags .tag-wrapper--> 
+						</div>
+						<!--close .panels (all of them)--> 
+					</div>
+					<!--close .sidebar-tabs--> 
+				</aside>
+        {% endcomment %}
+				<!-- close .widget containing blog tabs--> 
+			</div>
+		</div>
+		<!--close row-fluid --> 
+	</div>
+	<!--close .container id="main-content" --> 
+{% endblock %}
+

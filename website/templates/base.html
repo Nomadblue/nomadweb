@@ -1,0 +1,94 @@
+<!doctype html>
+<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en" dir="ltr"> <![endif]-->
+<!--[if IE 7]> <html class="no-js lt-ie9 lt-ie8" lang="en" dir="ltr"> <![endif]-->
+<!--[if IE 8]> <html class="no-js lt-ie9" lang="en" dir="ltr"> <![endif]-->
+<!--[if gt IE 8]><!--><html class="no-js" lang="en" dir="ltr"><!--<![endif]-->
+
+{% load staticfiles i18n %}
+
+<head>
+<title>{% block html_title %}{% endblock %}</title>
+
+<!-- Meta Data ================ -->
+<meta charset="UTF-8" />
+<meta name="description" content="{% trans "Strategy and web development" %}">
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+
+<!-- CSS ================ -->
+<link href="{% static "assets/css/bootstrap.min.css" %}" rel="stylesheet" type="text/css">
+<link href="{% static "assets/css/style.css" %}" rel="stylesheet" type="text/css">
+<link href="{% static "assets/css/header-1.css" %}" rel="stylesheet" type="text/css">
+
+{% comment %}
+<!-- Icons ================ -->
+<!-- For non-Retina iPhone, iPod Touch, and Android 2.1+ devices: -->
+<link rel="apple-touch-icon-precomposed" href="apple-touch-icon-precomposed.png" />
+<!-- For first- and second-generation iPad: -->
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="apple-touch-icon-72x72-precomposed.png" />
+<!-- For iPhone with high-resolution Retina display: -->
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="apple-touch-icon-114x114-precomposed.png" />
+<!-- For third-generation iPad with high-resolution Retina display: -->
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="apple-touch-icon-144x144-precomposed.png" />
+<link rel="shortcut icon" href="favicon.ico" />
+
+<!-- Open Graph for facebook
+http://graph.facebook.com/[UserName] replace [UserName] 
+with yours and get your fb:admis content information where the XXXX goes.
+================================================== -->
+<meta property="og:title" content="" />
+<meta property="og:type" content="" />
+<meta property="og:url" content="" />
+<meta property="og:image" content=""/>
+<meta property="og:site_name" content="" />
+<meta property="fb:admins" content="XXXXX" />
+<meta property="og:locale" content="en_us" />
+<meta property="og:description" content="  " />
+{% endcomment %}
+
+<!-- JS JQuery in the head you can use ajax if you want ================ -->
+<script src="{% static "assets/js/jquery.min.js" %}"></script>
+<!-- Add to Head after Style sheet http://modernizr.com/docs/#installing  ================ -->
+<script src="{% static "assets/js/modernizr.custom.87724.js" %}"></script><!-- js multiple backgrounds svg background size -->
+
+</head>
+<body class="home-7-whatever">
+
+<!-- begin accesibility skip to nav skip content -->
+<ul class="visuallyhidden" id="top">
+	<li><a href="#nav" title="Skip to navigation" accesskey="n">Skip to navigation</a></li>
+	<li><a href="#page" title="Skip to content" accesskey="c">Skip to content</a></li>
+</ul>
+<!-- end /.visuallyhidden accesibility--> 
+
+<!-- mobile navigation trigger-->
+<h5 class="mobile_nav"><a href="javascript:void(0)">&nbsp;<span></span></a></h5>
+<!--end mobile navigation trigger-->
+
+{% include "pre_header.html" %}
+{% include "header.html" %}
+
+<!-- begin #page - the container for everything but header -->
+<div id="page">
+  {% block container %}{% endblock %}
+  {% include "footer.html" %}
+	<span class="backToTop"><a href="#top">back to top</a></span> </div>
+<!-- close #page--> 
+
+<!-- JS JQuery ================ --> 
+<script src="{% static "assets/js/bootstrap.min.js" %}"></script><!--transitions, tooltips, popover, buttons, modals, alert messages--> 
+<script src="{% static "assets/js/ddsmoothmenu-min.js" %}"></script><!-- desktop edge detect menu --> 
+<script src="{% static "assets/js/jquery.dcjqaccordion.2.7.min.js" %}"></script><!-- mobile multi-level accordion menu --> 
+<script src="{% static "assets/js/jquery.easytabs.min.js" %}"></script><!-- tabs/testimonials --> 
+<script src="{% static "assets/js/slide-to-top-accordion-min.js" %}"></script><!-- slide to top accordion toggle --> 
+<script src="{% static "assets/js/jquery.easing-1.3.min.js" %}"></script><!--easing--> 
+<script src="{% static "assets/js/jquery.flexslider-min.js" %}"></script><!--flexslider content slider twitter slider and initializations--> 
+<script src="{% static "assets/js/responsive-tables.js" %}"></script><!--responsive table--> 
+<script src="{% static "assets/js/jquery.fitvid.js" %}"></script><!-- responsive videos --> 
+
+<!--initialize scripts / custom scripts all pages--> 
+<script src="{% static "assets/js/scripts.js" %}"></script>
+</body>
+</html>
+
+

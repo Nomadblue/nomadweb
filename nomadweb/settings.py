@@ -44,6 +44,7 @@ INSTALLED_APPS = (
     'django.contrib.humanize',
     'django_extensions',
     'south',
+    'website',
 )
 
 TEMPLATE_CONTEXT_PROCESSORS = (
@@ -57,8 +58,8 @@ TEMPLATE_CONTEXT_PROCESSORS = (
     'django.core.context_processors.request',
 )
 
-ROOT_URLCONF = 'nomad_web.urls'
-WSGI_APPLICATION = 'nomad_web.wsgi.application'
+ROOT_URLCONF = 'nomadweb.urls'
+WSGI_APPLICATION = 'nomadweb.wsgi.application'
 ALLOWED_HOSTS = []
 SECRET_KEY = os.environ.get('SECRET_KEY')
 
@@ -91,7 +92,7 @@ import dj_database_url
 DATABASES = {'default': dj_database_url.config(default=os.environ.get('DATABASE_URL'))}
 
 try:
-    from nomad_web.localsettings import *
+    from nomadweb.localsettings import *
 except:
     pass
 
