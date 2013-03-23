@@ -44,6 +44,7 @@ INSTALLED_APPS = (
     'django.contrib.humanize',
     'django_extensions',
     'storages',
+    'django_ses',
     'gunicorn',
     'south',
     'website',
