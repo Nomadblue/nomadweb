@@ -68,6 +68,13 @@ with yours and get your fb:admis content information where the XXXX goes.
 {% include "pre_header.html" %}
 {% include "header.html" %}
 
+      {% for message in messages %}
+      <div class="alert success-error-messages {{ message.tags }}">
+        <a href="#" data-dismiss="alert">{{ message }}</a>
+      <button type="button" class="close" data-dismiss="alert">×</button>
+      </div>
+      {% endfor %}
+
 <!-- begin #page - the container for everything but header -->
 <div id="page">
   {% block container %}{% endblock %}

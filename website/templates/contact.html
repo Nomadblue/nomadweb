@@ -37,14 +37,15 @@
 			<!--close span5 -->
 			
 			<div class="span7">
-				<form action="contact-action.php" id="contact-form" class="form-horizontal">
+				<form action="{% url 'contact' %}" method="post" id="contact-form" class="form-horizontal">
+          {% csrf_token %}
 					<fieldset>
 						<div class="control-group">
 							<label for="name">Your Name</label>
 							<input type="text" class="span10" name="name" id="name" />
 						</div>
 						<div class="control-group">
-							<label for="phone">Phone</label>
+							<label for="phone">Phone (optional)</label>
 							<input type="text" class="span10" name="phone" id="phone" />
 						</div>
 						<div class="control-group">
