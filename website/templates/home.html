@@ -33,7 +33,7 @@
 			<div class="span6">
 				<h2 class="short_headline"><span>Our secret sauce for success</span></h2>
 				<p>From the first line of code or sketch until the long-awaited launch day, we work hand-in-hand with you to listen and understand better your ideas and needs every day. Our company is not an island, it's an extension of your own team territory.</p>
-				<p class="right"><a href="#" class="btn btn-small btn-very-subtle">More &rarr;</a></p>
+				<p class="right"><a href="{% url 'contact' %}" class="btn btn-small btn-very-subtle">More &rarr;</a></p>
 			</div>
 			<!--close span6--> 
 		</div>
@@ -44,7 +44,7 @@
 					<h3>About us</h3>
 					<p>We are a group of technology enthusiasts building applications and first-class web tools. Experienced in entrepreneurship and lean methodologies, we have already helped a lot of startups and companies to transform their projects into something real.</p>
 				</div>
-				<div class="action"> <a href="register.html" class="btn-primary btn btn-large">30 Day Free Trial &nbsp;<i class="icon-circle-arrow-right icon-white"></i></a> </div>
+				<div class="action"> <a href="{% url 'contact' %}" class="btn-primary btn btn-large">Pitch your idea &nbsp;<i class="icon-circle-arrow-right icon-white"></i></a> </div>
 			</section>
 		</div>
 		<!--close row-fluid-->
@@ -52,22 +52,22 @@
 			<div class="span3"> <a class="biggieicon" href="#"><i class="icon-paper-clip"></i></a>
 				<h4 class="border-b">Hola Startups!</h4>
 				<p class="bumpdown">Startups need a flexible technical roadmap to prototype in an agile way, along with developers who are able to adapt to changes quick.This is why our modus operandi is focused in guiding our customers through all the different stages.</p>
-				<p class="center"><a href="#" class="btn btn-small btn-very-subtle">More &rarr;</a></p>
+				<p class="center"><a href="{% url 'contact' %}" class="btn btn-small btn-very-subtle">More &rarr;</a></p>
 			</div>
 			<div class="span3"> <a class="biggieicon" href="#"><i class="icon-wrench"></i></a>
 				<h4 class="border-b">Open source</h4>
 				<p class="bumpdown">We love it and we use it extensively. We write most of our stuff in Python and take advantage of the excellent and mature Django framework to produce API-based MVPs in a record time, ready to be consumed by front-end desktop GUIs, web UIs or mobile apps.</p>
-				<p class="center"><a href="#" class="btn btn-small btn-very-subtle">More &rarr;</a></p>
+				<p class="center"><a href="{% url 'contact' %}" class="btn btn-small btn-very-subtle">More &rarr;</a></p>
 			</div>
 			<div class="span3"> <a class="biggieicon" href="#"><i class="icon-refresh"></i></a>
 				<h4 class="border-b">Flexible but unbreakable</h4>
 				<p class="bumpdown">Our core team integrates professionales spanning different disciplines leading our client's projects and managing a variable set of collaborators. This structure allows us to be like bamboo, like... water. <a href="#">"Be water, my friend"!</a></p>
-				<p class="center"><a href="#" class="btn btn-small btn-very-subtle">More &rarr;</a></p>
+				<p class="center"><a href="{% url 'contact' %}" class="btn btn-small btn-very-subtle">More &rarr;</a></p>
 			</div>
 			<div class="span3"> <a class="biggieicon" href="#"><i class="icon-comments-alt"></i></a>
 				<h4 class="border-b">Let's talk</h4>
 				<p class="bumpdown">Nomadblue wants to become a leader in development and web-based technology implementation. Apps for mobile devices, social networks or e-commerce platforms, you name it. If you need experts to incorporate into your business plan, let's talk.</p>
-				<p class="center"><a href="#" class="btn btn-small btn-very-subtle">More &rarr;</a></p>
+				<p class="center"><a href="{% url 'contact' %}" class="btn btn-small btn-very-subtle">More &rarr;</a></p>
 			</div>
 		</div>
 		<!--close row-fluid -->
@@ -75,14 +75,14 @@
 		<h3 class="short_headline"><span>portfolio of latest works</span></h3>
 		<div class="row-fluid">
 			<div class="span6">
-        <p><img class="alignleft img-polaroid" src="{% static "img/blinkme_logo.png" %}">BlinkMe is a photo-sharing app that allows you to send images safely. Once opened, they can only be looked at for 3 seconds before they disappear, leaving no trace.</p>
+        <p><a href="http://blinkmeapp.com/en/"><img class="alignleft img-polaroid" src="{% static "img/blinkme_logo.png" %}"></a>BlinkMe is a photo-sharing app that allows you to send images safely. Once opened, they can only be looked at for 3 seconds before they disappear, leaving no trace.</p>
         <hr>
-        <p><img class="alignleft img-polaroid" src="{% static "img/canubring_logo.png" %}">Canubring is a social network that connects people who need to buy something from any place in the world, with others who can bring it on their trips.</p>
+        <p><a href="http://www.canubring.com/"><img class="alignleft img-polaroid" src="{% static "img/canubring_logo.png" %}"></a>Canubring is a social network that connects people who need to buy something from any place in the world, with others who can bring it on their trips.</p>
 			</div>
 			<div class="span6">
-        <p><img class="alignleft img-polaroid" src="{% static "img/dealirius_logo.png" %}">Dealirius is a deals search engine that scans the main collective buying sites (like Groupon, LetsBonus or Groupalia) and offers their discounts in just one place.</p>
+        <p><a href="http://dealirius.cl/"><img class="alignleft img-polaroid" src="{% static "img/dealirius_logo.png" %}"></a>Dealirius is a deals search engine that scans the main collective buying sites (like Groupon, LetsBonus or Groupalia) and offers their discounts in just one place.</p>
         <hr>
-        <p><img class="alignleft img-polaroid" src="{% static "img/eduquia_logo.png" %}">Eduquia is an education platform offering online apps and web tools for students, teachers and the academic ecosytem, and aiming to bring on the learning revolution.</p>
+        <p><a href="http://eduquia.com/"><img class="alignleft img-polaroid" src="{% static "img/eduquia_logo.png" %}"></a>Eduquia is an education platform offering online apps and web tools for students, teachers and the academic ecosytem, and aiming to bring on the learning revolution.</p>
 			</div>
         {% comment %}
 			<div class="span4 offset1"> 
