@@ -43,6 +43,7 @@ INSTALLED_APPS = (
     'django.contrib.admin',
     'django.contrib.humanize',
     'django_extensions',
+    'gunicorn',
     'south',
     'website',
     'contact',
