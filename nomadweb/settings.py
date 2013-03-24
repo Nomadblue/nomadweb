@@ -65,7 +65,8 @@ TEMPLATE_CONTEXT_PROCESSORS = (
 
 ROOT_URLCONF = 'nomadweb.urls'
 WSGI_APPLICATION = 'nomadweb.wsgi.application'
-ALLOWED_HOSTS = []
+
+ALLOWED_HOSTS = os.environ.get('ALLOWED_HOSTS', '*').split(',')
 SECRET_KEY = os.environ.get('SECRET_KEY')
 
 LOGGING = {
@@ -103,6 +104,9 @@ DEFAULT_FILE_STORAGE = 'storages.backends.s3boto.S3BotoStorage'
 S3_URL = 'http://%s.s3.amazonaws.com/' % AWS_STORAGE_BUCKET_NAME
 MEDIA_URL = '/media/'
 STATIC_URL = S3_URL
+
+# Google Analytics
+GOOGLE_ANALYTICS_KEY = os.environ.get('GOOGLE_ANALYTICS_KEY', False)
 
 try:
     from nomadweb.localsettings import *
