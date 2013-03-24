@@ -52,7 +52,7 @@ body.tall-logo nav.user {margin-left:180px;}
     margin-top:0;
     padding:0;
     top:-47px;
-    background-image:url(../images/tall-logo-desktop.png);
+    /* background-image:url(../images/tall-logo-desktop.png); */
     background-color:transparent;
     background-position:50% 50%;
     background-repeat: no-repeat;
@@ -406,7 +406,7 @@ body.tall-logo nav.user {margin-left:0;}
 }
 /* tall header for taller logo mobile */
 .tall-logo #logo {
-    background-image: url(../images/tall-logo-mobile.png); /*notice that this image changes on mobile */
+    /* background-image: url(../images/tall-logo-mobile.png); /*notice that this image changes on mobile *1/ */
     background-color: transparent!important;
     background-position:0 0;
     position: relative;
@@ -603,7 +603,7 @@ body.tall-logo nav.user {margin-left:0;}
 
 
 #logo {
-		background-image:url(../images/retina/logo_@2x.png);
+		/* background-image:url(../images/retina/logo_@2x.png); */
 	    	-moz-background-size:140px 59px; /*w & h of total ORIGINAL 72dpi image*/
              -ie-background-size:140px 59px;
               -o-background-size:140px 59px;
