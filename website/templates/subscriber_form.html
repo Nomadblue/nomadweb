@@ -3,7 +3,7 @@
 {% block container %}
 	<div class="hero-unit">
 		<div class="container">
-			<h1>Contact</h1>
+			<h1>Subscribe to our newsletter</h1>
 		</div>
 		<!--close container--> 
 	</div>
@@ -11,7 +11,7 @@
 	
 	<div class="container clearfix" id="main-content">
 		<div class="row-fluid reverse-order contact-page">
-			<p class="clearfix">Do you have a question? Do you want to pitch us your idea? Maybe you just want to say hi or leave us a comment? Any case, we'd love to hear from you</p>
+			<p class="clearfix">Do you want to receive our latest news, blog posts, or information about what we are cooking in our labs? Drop us your email and we will send you our newsletter with all the buzz around Nomadblue.</p>
 			<hr />
 			<div class="span5">
 				<p class="right"> <a class="icon-map-marker various fancybox.iframe" title="Map and Directions" href="https://maps.google.com/maps?q=Alc%C3%A1ntara+200,+Santiago,+Chile&hl=en&ie=UTF8&sll=-33.668298,-70.363372&sspn=1.268678,2.463684&hnear=Alc%C3%A1ntara+200,+Las+Condes,+Santiago,+Regi%C3%B3n+Metropolitana,+Chile&t=m&z=16">&nbsp;</a> </p>
@@ -20,9 +20,15 @@
 					Las Condes. C.P 7550159<br />
 					<strong>phone:</strong> <a href="tel:+56958791449" class="tele">+56958791449</a><br />
           <strong>email:</strong> <a href="mailto:hector@nomadblue.com">hector@nomadblue.com</a> </p>
+        {% comment %}
 				<h3 class="short_headline margin-top"><span>Get our latest news</span></h3>
 				<p>Sign up for our newsletter. We won't share your email address.</p>
-        {% include "bits/newsletter_input.html" %}
+				<div class="input-append">
+					<input type="email" placeholder="Email Address" class="span6" name="email" />
+					<button class="btn btn-primary">Sign Up</button>
+				</div>
+				<!--close input-append-->
+        {% endcomment %}
 				<h3 class="short_headline margin-top"><span>Follow Us</span></h3>
 				<ul class="social">
 					<li><a class="socicon facebook" href="#" title="Facebook"></a></li>
@@ -33,28 +39,7 @@
 			<!--close span5 -->
 			
 			<div class="span7">
-				<form action="{% url 'contact' %}" method="post" id="contact-form" class="form-horizontal">
-          {% csrf_token %}
-					<fieldset>
-						<div class="control-group">
-							<label for="name">Your Name</label>
-							<input type="text" class="span10" name="name" id="name" />
-						</div>
-						<div class="control-group">
-							<label for="phone">Phone (optional)</label>
-							<input type="text" class="span10" name="phone" id="phone" />
-						</div>
-						<div class="control-group">
-							<label for="email">Email Address</label>
-							<input type="email" class="span10" name="email" id="email" />
-						</div>
-						<div class="control-group">
-							<label for="message">Your Message</label>
-							<textarea class="span10" name="message" id="message" rows="3"></textarea>
-						</div>
-						<button type="submit" class="btn btn-primary btn-large">Send</button>
-					</fieldset>
-				</form>
+        {% include "bits/newsletter_input.html" %}
 			</div>
 			<!--close span7 --> 
 		</div>

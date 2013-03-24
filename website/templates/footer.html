@@ -41,14 +41,7 @@
 					<section>
 						<h4>Stay Updated</h4>
 						<p>Sign up for our crispy newsletter. We won't share your email address.</p>
-						<form action="#" method="post">
-              {% csrf_token %}
-							<div class="input-append">
-								<input type="email" placeholder="Email Address" class="span6" name="email" />
-								<button class="btn btn-primary">Sign Up</button>
-							</div>
-							<!--close input-append-->
-						</form>
+            {% include "bits/newsletter_input.html" %}
 					</section>
 					<!--close section-->
 					
