@@ -47,6 +47,7 @@ INSTALLED_APPS = (
     'django_ses',
     'gunicorn',
     'south',
+    'propaganda',
     'website',
     'contact',
 )
