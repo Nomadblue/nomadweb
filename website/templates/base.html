@@ -51,6 +51,9 @@ with yours and get your fb:admis content information where the XXXX goes.
 <!-- Add to Head after Style sheet http://modernizr.com/docs/#installing  ================ -->
 <script src="{% static "assets/js/modernizr.custom.87724.js" %}"></script><!-- js multiple backgrounds svg background size -->
 
+{% if google_analytics_key %}
+  {% include "extra_js/ga.html" %}
+{% endif %}
 </head>
 <body class="home-7-whatever">
 

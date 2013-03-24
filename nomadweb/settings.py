@@ -60,6 +60,7 @@ TEMPLATE_CONTEXT_PROCESSORS = (
     'django.core.context_processors.tz',
     'django.contrib.messages.context_processors.messages',
     'django.core.context_processors.request',
+    'website.context_processors.google_analytics'
 )
 
 ROOT_URLCONF = 'nomadweb.urls'
