@@ -1,0 +1,130 @@
+{% load nomadblog_tags %}
+
+<!-- close span9 blog-detail primary-column-->
+<section class="span3 sidebar secondary-column" id="secondary-nav">
+  <aside class="widget clearfix">
+    <h5 class="short_headline"><span>Blog Categories</span></h5>
+    <ul class="navigation">
+      <li><a href="{% url 'list_posts_by_category' 'django' %}">Django</a></li>
+      <li><a href="{% url 'list_posts_by_category' 'python' %}">Python</a></li>
+      <li><a href="{% url 'list_posts_by_category' 'internet' %}">Internet</a></li>
+    </ul>
+  </aside>
+  {% comment %}
+  <aside class="widget">
+    <h5 class="short_headline"><span>Search</span></h5>
+    <form class="searchform" method="get">
+      <input type="search" class="span12" value="type and hit enter" onFocus="this.value=''" onBlur="this.value='type and hit enter'" />
+    </form>
+  </aside>
+  {% endcomment %}
+  <aside class="widget">
+    <h5 class="short_headline"><span>Blog</span></h5>
+    <div class="sidebar-tabs">
+      <ul class="tabs">
+        <li class="tab"><a href="#tab-latest">Latest</a></li>
+        <li class="tab"><a href="#tab-popular">Popular</a></li>
+        <li class="tab"><a href="#tab-tags">Tags</a></li>
+      </ul>
+      <div class="panels">
+        <div id="tab-latest">
+          <ul class="blogposts clearfix">
+            <!--required class-->
+            {% get_latest_posts as latest_posts %}
+            {% for post in latest_posts|slice:":4" %}
+            {% include "bits/widget_blog_post_item.html" %}
+            {% endfor %}
+          </ul>
+        </div>
+        <!-- close #tab-latest-->
+        <div id="tab-popular"> 
+          <!--begin tab-popular-->
+          <ul class="blogposts clearfix">
+            <!--required class-->
+            {% get_popular_posts as popular_posts %}
+            {% for post in popular_posts|slice:":4" %}
+            {% include "bits/widget_blog_post_item.html" %}
+            {% endfor %}
+          </ul>
+        </div>
+        <!-- close #tab-popular-->
+        {% comment %}
+        <div id="tab-tags" class="tag-wrapper"> <a href="#" class="tag">business</a> <a href="#" class="tag">fun</a> <a href="#" class="tag">food</a> <a href="#" class="tag">design</a> <a href="#" class="tag">old</a> <a href="#" class="tag">recent</a> <a href="#" class="tag">junk</a> <a href="#" class="tag">important</a> <a href="#" class="tag">fonts</a> <a href="#" class="tag">css3</a> <a href="#" class="tag">php</a> <a href="#" class="tag">seamless</a> <a href="#" class="tag">complicated</a> </div>
+        {% endcomment %}
+        <div id="tab-tags" class="tag-wrapper">
+          {% get_categories as categories %}
+          {% for category in categories %}
+          <a href="{% url 'list_posts_by_category' category.name %}">{{ category.name }}</a>
+          {% endfor %}
+        </div>
+        <!-- close #tab-tags .tag-wrapper--> 
+      </div>
+      <!--close .panels (all of them)--> 
+    </div>
+    <!--close .sidebar-tabs--> 
+  </aside>
+  <!-- close .widget containing blog tabs-->
+  {% comment %}
+  <aside class="widget clearfix">
+    <h5 class="short_headline"><span>Sponsors</span></h5>
+    <ul class="sponsors">
+      <li><a href="#"><img src="../demo/125banner-fpo.png" alt="" /></a></li>
+      <li><a href="#"><img src="../demo/125banner-fpo.png" alt="" /></a></li>
+      <li><a href="#"><img src="../demo/125banner-fpo.png" alt="" /></a></li>
+      <li><a href="#"><img src="../demo/125banner-fpo.png" alt="" /></a></li>
+    </ul>
+  </aside>
+  <!--close aside widget-->
+  <aside class="widget clearfix">
+    <h5 class="short_headline"><span>Say Something</span></h5>
+    <p><a href="contact.html"><img class="aligncenter" src="../demo/fotogrph-running-water.jpg" alt="" /></a>
+    <p>Image by <a title="CC BY 3.0 | Fotogrph.com" href="http://fotogrph.com/" target="blank">Fotogrph</a>. Think clicks-and-mortar. But don’t think all three at the same time. It seems unclear, but it’s entirely completely realistic! The infomediaries factor can be summed up in one word: killer. What do we integrate? Anything and everything, regardless of humbleness!</p>
+    <p class="right"><a href="#" class="btn btn-small btn-very-subtle">Learn More &rarr;</a></p>
+  </aside>
+  <aside class="widget">
+    <div class="rotating-testimonials"> 
+      <!--"rotating-testimonials" is a required class-->
+      <h5 class="short_headline"><span>Testimonials</span></h5>
+      <div class="panels">
+        <div id="t1">
+          <blockquote>
+            <p>One isn’t necessarily born with courage, but one is born with potential. Without courage, we cannot practice any other virtue with consistency. We can’t be kind, true, merciful, generous, or honest.</p>
+            <footer>Maya Angelou</footer>
+          </blockquote>
+        </div>
+        <!--close #t1 -->
+        <div id="t2">
+          <blockquote>
+            <p>When the highest type of people hear Tao (Truth), they diligently practice it. When the average type of people hear Tao, they half believe in it. When the lowest type of people hear Tao, they laugh at it. If they did not laugh, it would not be Tao.</p>
+            <footer>Lao-Tzu</footer>
+          </blockquote>
+        </div>
+        <!--close #t2 -->
+        <div id="t3">
+          <blockquote>
+            <p>The human being is part of the whole, called by us the ‘universe’, a part limited in time and space. He experiences himself, his thoughts and feelings, as something separate from the rest — a kind of optical delusion of consciousness. This delusion is a kind of prison for us, restricting us to our personal desires. Our task must be to free ourselves from this prison by widening our circle of compassion to embrace all living creatures and the whole of nature in its beauty.</p>
+            <footer>Albert Einstein</footer>
+          </blockquote>
+        </div>
+        <!--close #t3 -->
+        <div id="t4">
+          <blockquote>
+            <p>Whatever course you decide upon, there is always someone to tell you that you are wrong. There are always difficulties arising which tempt you to believe that your critics are right. To map out a course of action and follow it to an end requires courage.</p>
+            <footer>Ralph Waldo Emerson</footer>
+          </blockquote>
+        </div>
+        <!--close #t4 --> 
+      </div>
+      <!--close panels-->
+      <ul class="tabs">
+        <li class="tab"><a href="#t1">maya-angelou</a></li>
+        <li class="tab"><a href="#t2">lao-tzu</a></li>
+        <li class="tab"><a href="#t3">albert-einstein</a></li>
+        <li class="tab"><a href="#t4">ralph-waldo-emerson</a></li>
+      </ul>
+    </div>
+    <!--close rotating-testimonials--> 
+  </aside>
+  {% endcomment %}
+</section>
+

@@ -1,10 +1,81 @@
 {% extends 'base.html' %}
 
 {% block container %}
-<div id="entries">
-    <div class="entries-wrapper">
-        <h1 class="link-nomad">Latest Entries</h1>
-        {% include "nomadblog/posts.html" %}
-    </div><!-- .entries-wrapper -->
-</div><!-- #entries -->
+<div class="container visible-phone hidden-tablet hidden-desktop">
+  <p class="right"><a class="btn btn-primary" href="#secondary-nav">Blog Menu &nbsp;<i class="icon-align-justify"></i></a></p>
+</div>
+<div class="hero-unit">
+  <div class="container">
+    {% if category %}
+    <h2>Latest posts by category '{{ category }}'</h2>
+    {% else %}
+    <h2>Blog</h2>
+    {% endif %}
+  </div>
+  <!--close container--> 
+</div>
+<!--close hero-unit-->
+
+<div class="container clearfix" id="main-content"> 
+  <!--begin main content-->
+  <div class="row-fluid sidebar-right"> 
+    <!--begin row-fluid-->
+    <div class="span9 blog-summary primary-column"> 
+      
+      {% for post in posts %}
+      <!-- begin entry-post 1-->
+      <article class="entry-post">
+        <header class="entry-header">
+          <h3 class="entry-title"><a href="{{ post.get_absolute_url }}">{{ post.title }}</a></h3>
+          <div class="byline"><i class="icon-pencil"></i> Nomadblue &nbsp;&nbsp; <i class="icon-time"></i> <abbr class="published" title="{{ post.pub_date|date }}">{{ post.pub_date|date}}</abbr> &nbsp;&nbsp; <a href="{{ post.get_absolute_url }}#view-comments"><i class="icon-comments-alt"></i> comments</a> </div>
+          <div class="entry-meta"><i class="icon-folder-open"></i> <a href="{% url 'list_posts_by_category' post.category.name %}">{{ post.category.name }}</a>&nbsp;&nbsp; <a href="{{ post.get_absolute_url }}"><i class="icon-link"></i> Permalink</a> </div>
+          {% comment %}
+          <div class="entry-meta"><i class="icon-folder-open"></i> <a href="#">Design</a>, <a href="#">Typography</a> &nbsp;&nbsp; <a href="blog-single.html"><i class="icon-link"></i> Permalink</a> </div>
+          {% endcomment %}
+        </header>
+        <!--end entry-header --> 
+        
+        <!--begin loop of entry-posts for summary page-->
+        
+        <div class="entry-content">
+          {% comment %}
+          <figure> <a href="blog-single.html" class="hover"><img src="../demo/4830134044.jpg" alt=""><span class="plus"></span></a>
+            <figcaption>This is a figcaption. Image credit: <a href="http://www.flickr.com/photos/fontfont/4830134044/">CC BY 2.0 FontFont</a></figcaption>
+          </figure>
+          {% endcomment %}
+          <p>{{ post.summary|safe }}</p>
+          <p class="more right"><a class="btn btn-primary" href="{{ post.get_absolute_url }}">Read More &rarr;</a> 
+        </div>
+        <!-- close entry-content -->
+        
+        <footer class="entry-footer"> <span class="blog date"> <span class="month">{{ post.pub_date|date:"M" }}</span> <span class="day">{{ post.pub_date|date:"d" }}</span> <span class="year">{{ post.pub_date|date:"Y" }}</span> </span> 
+          <!--close date--> 
+        </footer>
+        <!--end entry-footer--> 
+      </article>
+      <!-- end entry-post 1 --> 
+      {% endfor %}
+      
+      <!--end loop of entry-posts for summary page-->
+      
+      {% comment %}
+      <div class="pagination pagination-right no-margin pagination-mini">
+        <ul>
+          <li><a href="#">1</a></li>
+          <li><a href="#">2</a></li>
+          <li class="active"><span>3</span></li>
+          <li><a href="#">4</a></li>
+          <li><a href="#">Next</a></li>
+        </ul>
+      </div>
+      {% endcomment %}
+    </div>
+    <!-- close .span9 . primary-column .blog-summary-->
+    
+    {% include "sidebar/blog_sidebar.html" %}
+    <!--close section sidebar span3--> 
+  </div>
+  <!--close row-fluid--> 
+</div>
+<!--close .container id="main-content" --> 
 {% endblock %}
