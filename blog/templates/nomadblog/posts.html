@@ -1,0 +1,12 @@
+{% for post in posts %}
+<div class="entry">
+    <abbr>Published on {{ post.pub_date|date }}</abbr>
+    <h1><a href="{{ post.get_absolute_url }}" title="{{ post.title }}">{{ post.title }}</a></h1>
+    {{ post.summary|safe }}
+    <p><a href="{{ post.get_absolute_url }}">Read the full entry</a></p>
+</div><!-- .entry -->
+{% empty %}
+<div class="entry">
+    <p>Sorry, no posts found.</p>
+</div><!-- .entry -->
+{% endfor %}

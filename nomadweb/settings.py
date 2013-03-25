@@ -50,6 +50,8 @@ INSTALLED_APPS = (
     'propaganda',
     'website',
     'contact',
+    'blog',
+    'nomadblog',
 )
 
 TEMPLATE_CONTEXT_PROCESSORS = (
@@ -108,6 +110,9 @@ STATIC_URL = S3_URL
 
 # Google Analytics
 GOOGLE_ANALYTICS_KEY = os.environ.get('GOOGLE_ANALYTICS_KEY', False)
+
+# Nomadblog
+POST_MODEL = 'blog.models.NomadPost'
 
 try:
     from nomadweb.localsettings import *

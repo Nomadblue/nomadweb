@@ -1,0 +1,386 @@
+{% extends 'base.html' %}
+
+{% load nomadblog_tags %}
+
+{% block container %}
+<div class="container visible-phone hidden-tablet hidden-desktop">
+  <p class="right"><a class="btn btn-primary" href="#secondary-nav">Blog Menu &nbsp;<i class="icon-align-justify"></i></a></p>
+</div>
+<div class="container clearfix" id="main-content"> 
+  <!--begin main content-->
+  <div class="row-fluid sidebar-right"> 
+    <!--begin row-fluid-->
+    <div class="span9 blog-detail primary-column"> 
+      <!--begin primary-column-->
+      <article class="entry-post">
+        <header class="entry-header">
+          <h1>{{ post.title }}</h1>
+          <div class="byline"><i class="icon-pencil"></i> Nomadblue &nbsp;&nbsp; <i class="icon-time"></i> <abbr class="published" title="{{ post.pub_date|date }}">{{ post.pub_date|date }}</abbr> &nbsp;&nbsp; <a href="#view-comments" class="scrollto"><i class="icon-comments-alt"></i> comments</a> </div>
+          {% comment %}
+          <div class="entry-meta"><i class="icon-folder-open"></i> <a href="{% url 'list_posts_by_category' post.category.name %}">{{ post.category.name }}</a></div>
+          {% endcomment %}
+          
+          <!--add this share buttons for mobile viewers-->
+          <div class="addthis_toolbox addthis_16x16_style"> <a class="addthis_button_preferred_2"></a> <a class="addthis_button_preferred_3"></a> <a class="addthis_button_preferred_7"></a> <a class="addthis_button_preferred_6"></a> <a class="addthis_button_preferred_10"></a> <a class="addthis_button_preferred_4"></a> <a class="addthis_button_compact"></a> </div>
+        </header>
+        <!--end entry-header-->
+        
+        <div class="entry-content">
+          {{ post.content|safe }}
+          {% comment %}
+          <figure> <img src="../demo/4830134044.jpg" alt="">
+            <figcaption>This is a figcaption. Image credit: <a href="http://www.flickr.com/photos/fontfont/4830134044/">CC BY 2.0 FontFont</a></figcaption>
+          </figure>
+          <p> Crisp is the industry leader of frictionless e-services. Is it more important for something to be cutting-edge or to be customer-defined? Quick: do you have a reconfigurable strategy for coping with new versioning metrics? We usually optimize transparent, affiliate-based, 24/7/365 60/24/7/365 structuring. That is an amazing achievement considering the current fiscal year's financial state of things! Without sufficient ROI metrics, niches are forced to become six-sigma. What does it really mean to utilize "holistically"? Our magnetic feature set is unmatched, but our extensible compliance and easy operation is constantly considered a remarkable achievement. What do we aggregate? Anything and everything, regardless of humbleness! It seems discombobulating, but it's true! Our feature set is unmatched in the industry, but our one-to-one paradigms and user-proof use is always considered an amazing achievement. Think integrated. Our technology takes the best features of XSLT and XSL. It may seem incredible, but it's true! </p>
+          <p><img class="alignleft" src="../demo/fresh-work/fw-708px-Vincent_Willem_van_Gogh_012.png" alt=" ">Image class alignleft. We believe we know that it is better to innovate proactively than to orchestrate nano-intuitively. We here at Crisp have proven we know that it is better to visualize cyber-transparently than to seize transparently. Think C2B2B. Think innovative. Think client-focused. But don't think all three at the same time. We will visualize the term "backward-compatible". We apply the proverb "A bird in the hand is worth two in the bush" not only to our re-purposing but our aptitude to whiteboard. What does the term "channels" really mean? What does the term "fractal" really mean? We will leverage the term "user-defined". The convergence factor can be summed up in one word: global. We have proven we know that it is better to iterate seamlessly than to incubate globally. Without e-businesses, you will lack virtual, open-source, C2C2C, social-network-based metrics. What do we maximize? Anything and everything, regardless of reconditeness! We often disintermediate vertical architectures. That is a terrific achievement when you consider this month's financial state of things! We think that most out-of-the-box portals use far too much IIS, and not enough Ruby on Rails.</p>
+          <p> Have you ever wanted to unleash your feature set? Without having to learn Rails? Without sufficient networks, infomediaries are forced to become value-added. The metrics for obfuscation are more well-understood if they are not backward-compatible. If you integrate vertically, you may have to harness cyber-super-vertically. Your budget for syndicating should be at least one-half of your budget for synthesizing. Your budget for leveraging should be at least twice your budget for morphing. Do you have a scheme to become wireless? Is it more important for something to be 24/7 or to be customized, scalable? What do we streamline? Anything and everything, regardless of anonymity! Imagine a combination of Dynamic HTML and ActionScript. </p>
+          {% endcomment %}
+        </div>
+        <!--end entry-content-->
+        
+        <div class="entry-tags"> Category:<br class="clear" />
+          <a href="{% url 'list_posts_by_category' post.category.name %}">{{ post.category.name }}</a>
+          {% comment %}
+          <a href="#">people</a> <a href="#">open source</a> <a href="#">indie thought</a> <a href="#">goodness</a>
+          {% endcomment %}
+        </div>
+        <!--close entry-tags-->
+        
+        <footer class="entry-footer"> <span class="blog date"> <span class="month">{{ post.pub_date|date:"M" }}</span> <span class="day">{{ post.pub_date|date:"d" }}</span> <span class="year">{{ post.pub_date|date:"Y" }}</span> </span> 
+          <!--close date--> 
+          
+          <!-- add this share buttons for desktop and larger screens -->
+          <div class="addthis_toolbox addthis_16x16_style"> <a class="addthis_button_preferred_2"></a> <a class="addthis_button_preferred_3"></a> <a class="addthis_button_preferred_7"></a> <a class="addthis_button_preferred_6"></a> <a class="addthis_button_preferred_10"></a> <a class="addthis_button_preferred_4"></a> <a class="addthis_button_compact"></a> </div>
+          <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=xa-50b7b03737b7ccb9"></script> 
+          <!-- AddThis Button END --> 
+        </footer>
+        <!--end entry-footer--> 
+        
+      </article>
+      <!--end entry-post -->
+      
+      <div class="entry-pagination">
+        <ul class="pager">
+          {% if post.nomadpost.previous_post %}
+          <li><a href="{{ post.nomadpost.previous_post }}">&larr; Older</a></li>
+          {% endif %}
+          {% if post.nomadpost.next_post %}
+          <li><a href="{{ post.nomadpost.next_post }}">Newer &rarr;</a></li>
+          {% endif %}
+        </ul>
+        <!--close pager--> 
+      </div>
+      <!--end entry-pagination-->
+      
+      {% comment %}
+      <div class="entry-related">
+        <h4 class="short_headline"><span>Related Articles</span></h4>
+        <ul class="navigation">
+          <li> <a href="#"> Lorem ipsum dolor sit amet </a> </li>
+          <li> <a href="#"> Nam sed orci massa quis placerat libero </a> </li>
+          <li> <a href="#"> Final Test Maybe </a> </li>
+          <li> <a href="#"> Sed venenatis laoreet ligula </a> </li>
+        </ul>
+      </div>
+      <!--close entry-related--> 
+      {% endcomment %}
+      
+      <!--begin comments section-->
+      <section id="view-comments" class="entry-comments clearfix">
+        <div id="disqus_thread"></div><script type="text/javascript" src="http://disqus.com/forums/nomadblue/embed.js"></script><noscript><a href="http://nomadblue.disqus.com/?url=ref">View the discussion thread.</a></noscript><a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
+
+        {% comment %}
+        <h3>6 Comments <a href="#comment-form" class="scrollto">| Make a comment</a></h3>
+        <!--begin comments-->
+        <ul>
+          <!--grand parent-->
+          <li id="comment-1"><!--parent-->
+            <footer class="comment-meta"> <a href="#" rel="external nofollow" title="Kathy"><img alt="Kathy" src="../demo/kathy.jpg" class="avatar" /></a>
+              <div class="comment-meta"> <span class="comment-author vcard"><cite title="LinkURLofauthor"><a href="#" title="Kathy" class="url" rel="external nofollow">Kathy</a></cite></span>
+                <time class="published" datetime="2012-10-10T09:57:00Z">October 10, 2012</time>
+                | <a class="permalink" href="#" title="Permalink to comment 1">Permalink</a> | <a class="comment-reply-link" href="#">Reply</a> </div>
+            </footer>
+            <div class="text">
+              <p>Avatars by <a href="http://fotogrph.com/">fotogrph.</a> Sample threaded comments. Nam sed orci massa, quis placerat libero. Vivamus at ligula odio. Morbi vel dictum ligula. Mauris id neque leo. Nullam orci quam, luctus sed posuere eu, dignissim sollicitudin sem. Sed velit arcu, rutrum et varius sit amet, congue id nunc. Aenean enim nisl, suscipit a condimentum et, malesuada et massa. Vestibulum convallis sem nec mauris dapibus non dapibus velit lobortis.</p>
+            </div>
+            <ul class="children">
+              <li>
+                <footer class="comment-meta"> <a href="#" rel="external nofollow" title="Dave"><img alt="Dave" src="../demo/dave.jpg" class="avatar" /></a>
+                  <div class="comment-meta"> <span class="comment-author vcard"><cite title="LinkURLofauthor"><a href="#" title="Dave" class="url" rel="external nofollow">Dave</a></cite></span>
+                    <time class="published" datetime="2012-10-10T09:57:00Z">October 10, 2012</time>
+                    | <a class="permalink" href="#" title="Permalink to comment 2">Permalink</a> | <a class="comment-reply-link" href="#">Reply</a> </div>
+                </footer>
+                <div class="text">
+                  <p>Donec sagittis lobortis libero vel semper. Nulla facilisi. Sed venenatis laoreet ligula, vulputate ornare magna posuere lobortis. Proin volutpat massa nec odio laoreet pharetra. Suspendisse quis dolor et nisl volutpat pretium. Mauris blandit metus sit amet risus aliquet et dapibus est vestibulum. Pellentesque dignissim condimentum porttitor. Vivamus est ipsum, ultrices ac ultrices sed, semper non nulla.</p>
+                </div>
+              </li>
+              <!-- close child li-->
+              <li>
+                <footer class="comment-meta"> <a href="#" rel="external nofollow" title="Nickie"><img alt="Jake" src="../demo/nickie.jpg" class="avatar" /></a>
+                  <div class="comment-meta"> <span class="comment-author vcard"><cite title="LinkURLofauthor"><a href="#" title="Nickie" class="url" rel="external nofollow">Nickie</a></cite></span>
+                    <time class="published" datetime="2012-10-10T09:57:00Z">October 10, 2012</time>
+                    | <a class="permalink" href="#" title="Permalink to comment 3">Permalink</a> | <a class="comment-reply-link" href="#">Reply</a> </div>
+                </footer>
+                <div class="text">
+                  <p>Suspendisse a eleifend nisl. Sed elit leo, feugiat id vehicula nec, eleifend sed felis. Etiam gravida, nisi ac sagittis viverra, purus eros rhoncus odio, a dapibus felis turpis vel massa. Donec vestibulum luctus tortor ac tristique. Praesent vel est eu nisi vehicula commodo. </p>
+                  <p>Phasellus eleifend, ligula ut ornare euismod, ipsum libero adipiscing nunc, in scelerisque ligula ligula eu massa. </p>
+                </div>
+              </li>
+              <!-- close child li-->
+              <li>
+                <footer class="comment-meta"> <a href="#" rel="external nofollow" title="Jake"><img alt="Jake" src="../demo/jake.jpg" class="avatar" /></a>
+                  <div class="comment-meta"> <span class="comment-author vcard"><cite title="LinkURLofauthor"><a href="#" title="Jake" class="url" rel="external nofollow">Jake</a></cite></span>
+                    <time class="published" datetime="2012-10-10T09:57:00Z">October 10, 2012</time>
+                    | <a class="permalink" href="#" title="Permalink to comment 4">Permalink</a> | <a class="comment-reply-link" href="#">Reply</a> </div>
+                </footer>
+                <div class="text">
+                  <p>Mauris sodales imperdiet viverra. Fusce bibendum rhoncus nibh et porta. Vestibulum nec nibh tortor. Morbi viverra cursus lorem et dignissim. Maecenas rutrum adipiscing libero ut rhoncus. Cras commodo diam quis leo tristique a porta velit porta. Nunc non tellus et leo rutrum dapibus. </p>
+                </div>
+              </li>
+              <!-- close child li-->
+            </ul>
+            <!-- close children ul--> 
+          </li>
+          <!-- close parent li-->
+          <li><!-- parent li -->
+            <footer class="comment-meta"> <a href="#" rel="external nofollow" title="Scott"><img alt="Scott" src="../demo/scott.jpg" class="avatar" /></a>
+              <div class="comment-meta"> <span class="comment-author vcard"><cite title="LinkURLofauthor"><a href="#" title="Scott" class="url" rel="external nofollow">Scott</a></cite></span>
+                <time class="published" datetime="2012-10-10T09:57:00Z">October 10, 2012</time>
+                | <a class="permalink" href="#" title="Permalink to comment 5">Permalink</a> | <a class="comment-reply-link" href="#">Reply</a> </div>
+            </footer>
+            <div class="text">
+              <p>Cras id mi ac felis blandit commodo non non metus. Donec orci nulla, sagittis id varius id, sagittis a metus. Proin dignissim aliquam augue, vel pulvinar ante interdum eget. Praesent lorem massa, ullamcorper eu lacinia sit amet, fermentum eget urna.</p>
+            </div>
+            <ul class="children">
+              <li><!--child li-->
+                <footer class="comment-meta"> <a href="#" rel="external nofollow" title="Jackie"><img alt="Jackie" src="../demo/jackie.jpg" class="avatar" /></a>
+                  <div class="comment-meta"> <span class="comment-author vcard"><cite title="LinkURLofauthor"><a href="#" title="Jackie" class="url" rel="external nofollow">Jackie</a></cite></span>
+                    <time class="published" datetime="2012-10-10T09:57:00Z">October 10, 2012</time>
+                    | <a class="permalink" href="#" title="Permalink to comment 5">Permalink</a> | <a class="comment-reply-link" href="#">Reply</a> </div>
+                </footer>
+                <div class="text">
+                  <p>Sed venenatis laoreet ligula, vulputate ornare magna posuere lobortis. Proin volutpat massa nec odio laoreet pharetra. Suspendisse quis dolor et nisl volutpat pretium. Mauris blandit metus sit amet risus aliquet et dapibus est vestibulum. Pellentesque dignissim condimentum porttitor. Vivamus est ipsum, ultrices ac ultrices sed, semper non nulla. </p>
+                </div>
+              </li>
+              <!-- close child li-->
+            </ul>
+            <!-- close children ul--> 
+          </li>
+          <!-- close parent li-->
+        </ul>
+        <!-- close grandparent ul--> 
+        <!-- End Comments --> 
+        
+        <!-- Begin Comments Form -->
+        <div id="comment-form">
+          <h3>Leave a Comment</h3>
+          <p>Required fields are marked *. Your email will not be published or shared.</p>
+          <form class="comment_form" action="form-action.php" method="post">
+            <span class="inputwrapper name">
+            <label for="name">*Enter your name:</label>
+            <input type="text" id="name" name="name" />
+            </span> <span class="inputwrapper email">
+            <label for="email">*Email:</label>
+            <input type="email" id="email" name="email" />
+            </span> <span class="inputwrapper">
+            <label for="website">Website:</label>
+            <input type="url" id="website" name="website" />
+            </span> <span class="inputwrapper">
+            <label for="message">Message:</label>
+            <textarea name="message" id="message" rows="5" cols="30"></textarea>
+            </span>
+            <input type="submit" value="Add Comment" class="btn btn-primary" name="submit" />
+          </form>
+        </div>
+        <!-- End Comment Form --> 
+        {% endcomment %}
+      </section>
+      <!--close comment section--> 
+      
+    </div>
+
+<script type="text/javascript">
+//<![CDATA[
+(function() {
+    var links = document.getElementsByTagName('a');
+    var query = '?';
+    for(var i = 0; i < links.length; i++) {
+    if(links[i].href.indexOf('#disqus_thread') >= 0) {
+        query += 'url' + i + '=' + encodeURIComponent(links[i].href) + '&';
+    }
+    }
+    document.write('<script charset="utf-8" type="text/javascript" src="http://disqus.com/forums/nomadblue/get_num_replies.js' + query + '"></' + 'script>');
+})();
+//]]>
+</script>
+
+    <!-- close span9 blog-detail primary-column-->
+    <section class="span3 sidebar secondary-column" id="secondary-nav">
+      <aside class="widget clearfix">
+        <h5 class="short_headline"><span>Blog Categories</span></h5>
+        <ul class="navigation">
+          <li><a href="{% url 'list_posts_by_category' 'django' %}">Django</a></li>
+          <li><a href="{% url 'list_posts_by_category' 'python' %}">Python</a></li>
+          <li><a href="{% url 'list_posts_by_category' 'internet' %}">Internet</a></li>
+        </ul>
+      </aside>
+      {% comment %}
+      <aside class="widget">
+        <h5 class="short_headline"><span>Search</span></h5>
+        <form class="searchform" method="get">
+          <input type="search" class="span12" value="type and hit enter" onFocus="this.value=''" onBlur="this.value='type and hit enter'" />
+        </form>
+      </aside>
+      {% endcomment %}
+      <aside class="widget">
+        <h5 class="short_headline"><span>Blog</span></h5>
+        <div class="sidebar-tabs">
+          <ul class="tabs">
+            <li class="tab"><a href="#tab-latest">Latest</a></li>
+            <li class="tab"><a href="#tab-popular">Popular</a></li>
+            <li class="tab"><a href="#tab-tags">Tags</a></li>
+          </ul>
+          <div class="panels">
+            <div id="tab-latest">
+              <ul class="blogposts clearfix">
+                <!--required class-->
+                {% get_latest_posts as latest_posts %}
+                {% for post in latest_posts|slice:":4" %}
+                {% include "bits/widget_blog_post_item.html" %}
+                {% endfor %}
+              </ul>
+            </div>
+            <!-- close #tab-latest-->
+            <div id="tab-popular"> 
+              <!--begin tab-popular-->
+              <ul class="blogposts clearfix">
+                <!--required class-->
+                {% get_popular_posts as popular_posts %}
+                {% for post in popular_posts|slice:":4" %}
+                {% include "bits/widget_blog_post_item.html" %}
+                {% endfor %}
+              </ul>
+            </div>
+            <!-- close #tab-popular-->
+            {% comment %}
+            <div id="tab-tags" class="tag-wrapper"> <a href="#" class="tag">business</a> <a href="#" class="tag">fun</a> <a href="#" class="tag">food</a> <a href="#" class="tag">design</a> <a href="#" class="tag">old</a> <a href="#" class="tag">recent</a> <a href="#" class="tag">junk</a> <a href="#" class="tag">important</a> <a href="#" class="tag">fonts</a> <a href="#" class="tag">css3</a> <a href="#" class="tag">php</a> <a href="#" class="tag">seamless</a> <a href="#" class="tag">complicated</a> </div>
+            {% endcomment %}
+            <div id="tab-tags" class="tag-wrapper">
+              {% get_categories as categories %}
+              {% for category in categories %}
+              <a href="{% url 'list_posts_by_category' category.name %}">{{ category.name }}</a>
+              {% endfor %}
+            </div>
+            <!-- close #tab-tags .tag-wrapper--> 
+          </div>
+          <!--close .panels (all of them)--> 
+        </div>
+        <!--close .sidebar-tabs--> 
+      </aside>
+      <!-- close .widget containing blog tabs-->
+      {% comment %}
+      <aside class="widget clearfix">
+        <h5 class="short_headline"><span>Sponsors</span></h5>
+        <ul class="sponsors">
+          <li><a href="#"><img src="../demo/125banner-fpo.png" alt="" /></a></li>
+          <li><a href="#"><img src="../demo/125banner-fpo.png" alt="" /></a></li>
+          <li><a href="#"><img src="../demo/125banner-fpo.png" alt="" /></a></li>
+          <li><a href="#"><img src="../demo/125banner-fpo.png" alt="" /></a></li>
+        </ul>
+      </aside>
+      <!--close aside widget-->
+      <aside class="widget clearfix">
+        <h5 class="short_headline"><span>Say Something</span></h5>
+        <p><a href="contact.html"><img class="aligncenter" src="../demo/fotogrph-running-water.jpg" alt="" /></a>
+        <p>Image by <a title="CC BY 3.0 | Fotogrph.com" href="http://fotogrph.com/" target="blank">Fotogrph</a>. Think clicks-and-mortar. But don’t think all three at the same time. It seems unclear, but it’s entirely completely realistic! The infomediaries factor can be summed up in one word: killer. What do we integrate? Anything and everything, regardless of humbleness!</p>
+        <p class="right"><a href="#" class="btn btn-small btn-very-subtle">Learn More &rarr;</a></p>
+      </aside>
+      <aside class="widget">
+        <div class="rotating-testimonials"> 
+          <!--"rotating-testimonials" is a required class-->
+          <h5 class="short_headline"><span>Testimonials</span></h5>
+          <div class="panels">
+            <div id="t1">
+              <blockquote>
+                <p>One isn’t necessarily born with courage, but one is born with potential. Without courage, we cannot practice any other virtue with consistency. We can’t be kind, true, merciful, generous, or honest.</p>
+                <footer>Maya Angelou</footer>
+              </blockquote>
+            </div>
+            <!--close #t1 -->
+            <div id="t2">
+              <blockquote>
+                <p>When the highest type of people hear Tao (Truth), they diligently practice it. When the average type of people hear Tao, they half believe in it. When the lowest type of people hear Tao, they laugh at it. If they did not laugh, it would not be Tao.</p>
+                <footer>Lao-Tzu</footer>
+              </blockquote>
+            </div>
+            <!--close #t2 -->
+            <div id="t3">
+              <blockquote>
+                <p>The human being is part of the whole, called by us the ‘universe’, a part limited in time and space. He experiences himself, his thoughts and feelings, as something separate from the rest — a kind of optical delusion of consciousness. This delusion is a kind of prison for us, restricting us to our personal desires. Our task must be to free ourselves from this prison by widening our circle of compassion to embrace all living creatures and the whole of nature in its beauty.</p>
+                <footer>Albert Einstein</footer>
+              </blockquote>
+            </div>
+            <!--close #t3 -->
+            <div id="t4">
+              <blockquote>
+                <p>Whatever course you decide upon, there is always someone to tell you that you are wrong. There are always difficulties arising which tempt you to believe that your critics are right. To map out a course of action and follow it to an end requires courage.</p>
+                <footer>Ralph Waldo Emerson</footer>
+              </blockquote>
+            </div>
+            <!--close #t4 --> 
+          </div>
+          <!--close panels-->
+          <ul class="tabs">
+            <li class="tab"><a href="#t1">maya-angelou</a></li>
+            <li class="tab"><a href="#t2">lao-tzu</a></li>
+            <li class="tab"><a href="#t3">albert-einstein</a></li>
+            <li class="tab"><a href="#t4">ralph-waldo-emerson</a></li>
+          </ul>
+        </div>
+        <!--close rotating-testimonials--> 
+      </aside>
+      {% endcomment %}
+    </section>
+    <!--close section sidebar span3--> 
+  </div>
+  <!--close row-fluid--> 
+</div>
+<!--close .container id="main-content" --> 
+
+{% endblock container %}
+
+{% comment %}
+<div id="entries">
+    <div class="entries-wrapper">
+    
+        <div class="entry">
+            <abbr>Published on {{ post.pub_date|date }}</abbr>
+            <h1>{{ post.title }}</h1>
+            {{ post.content|safe }}
+        </div><!-- .entry -->
+        <div class="post-meta">
+            <p>Categorized under <a href="{% url list_posts_by_category post.category.name %}" class="link-categories">{{ post.category.name }}</a></p>
+        </div>
+        
+        <h2>Comments</h2><br />
+        <div id="disqus_thread"></div><script type="text/javascript" src="http://disqus.com/forums/nomadblue/embed.js"></script><noscript><a href="http://nomadblue.disqus.com/?url=ref">View the discussion thread.</a></noscript><a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
+
+    </div><!-- .entries-wrapper -->
+</div><!-- #entries -->
+
+<script type="text/javascript">
+//<![CDATA[
+(function() {
+    var links = document.getElementsByTagName('a');
+    var query = '?';
+    for(var i = 0; i < links.length; i++) {
+    if(links[i].href.indexOf('#disqus_thread') >= 0) {
+        query += 'url' + i + '=' + encodeURIComponent(links[i].href) + '&';
+    }
+    }
+    document.write('<script charset="utf-8" type="text/javascript" src="http://disqus.com/forums/nomadblue/get_num_replies.js' + query + '"></' + 'script>');
+})();
+//]]>
+</script>
+{% endcomment %}
+

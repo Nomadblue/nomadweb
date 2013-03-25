@@ -1,0 +1,6 @@
+<li> <span class="date"> <span class="month">{{ post.pub_date|date:"M" }}</span> <span class="day">{{ post.pub_date|date:"d" }}</span> <span class="year">{{ post.pub_date|date:"Y" }}</span> </span>
+<h3><a href="{{ post.get_absolute_url }}">{{ post.title }}</a></h3>
+  <a href="{{ post.get_absolute_url }}">
+    <p>{{ post.content|safe|truncatewords:10 }}</p>
+  </a> </li>
+

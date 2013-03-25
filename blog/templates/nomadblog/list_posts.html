@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+
+{% block container %}
+<div id="entries">
+    <div class="entries-wrapper">
+        <h1 class="link-nomad">Latest Entries</h1>
+        {% include "nomadblog/posts.html" %}
+    </div><!-- .entries-wrapper -->
+</div><!-- #entries -->
+{% endblock %}

@@ -1,0 +1,7 @@
+<ul id="categories-list">
+{% for cat in categories %}
+    <li><a href="{% url list_posts_by_category cat.name %}" title="browse {{ cat.name }} category">{{ cat.name }}</a></li>
+{% empty %}
+    <li>Sorry, no categories found.</li>
+{% endfor %}
+</ul>
