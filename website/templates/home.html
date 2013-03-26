@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 
-{% load staticfiles i18n %}
+{% load staticfiles i18n nomadblog_tags %}
 
 {% block container %}
 	<div class="hero-unit center no-border">
@@ -32,7 +32,7 @@
 			<!-- end  .flexslider. image-slider span6 -->
 			<div class="span6">
 				<h2 class="short_headline"><span>Our secret sauce for success</span></h2>
-				<p>From the first line of code or sketch until the long-awaited launch day, we work hand-in-hand with you to listen and understand better your ideas and needs every day. Our company is not an island, it's an extension of your own team territory.</p>
+        <p>From the first line of code or sketch until the long-awaited launch day, we work hand-in-hand with you to <strong>listen and understand better</strong> your ideas and needs every day. Our company is not an island, it's an extension of your own team territory.</p>
 				<p class="right"><a href="{% url 'contact' %}" class="btn btn-small btn-very-subtle">More &rarr;</a></p>
 			</div>
 			<!--close span6--> 
@@ -51,22 +51,22 @@
 		<div class="row-fluid center">
 			<div class="span3"> <a class="biggieicon" href="#"><i class="icon-paper-clip"></i></a>
 				<h4 class="border-b">Hola Startups!</h4>
-				<p class="bumpdown">Startups need a flexible technical roadmap to prototype in an agile way, along with developers who are able to adapt to changes quick.This is why our modus operandi is focused in guiding our customers through all the different stages.</p>
+				<p class="bumpdown">Startups need a flexible technical roadmap to prototype in an agile way, along with developers who are able to adapt to changes quick.This is why our modus operandi is focused in <strong>guiding our customers through all the different stages</strong>.</p>
 				<p class="center"><a href="{% url 'contact' %}" class="btn btn-small btn-very-subtle">More &rarr;</a></p>
 			</div>
 			<div class="span3"> <a class="biggieicon" href="#"><i class="icon-wrench"></i></a>
 				<h4 class="border-b">Open source</h4>
-				<p class="bumpdown">We love it and we use it extensively. We write most of our stuff in Python and take advantage of the excellent and mature Django framework to produce API-based MVPs in a record time, ready to be consumed by front-end desktop GUIs, web UIs or mobile apps.</p>
+				<p class="bumpdown">We love it and we use it extensively. We write most of our stuff in <strong>Python</strong> and take advantage of the excellent and mature <a href="https://www.djangoproject.com/">Django framework</a> to produce API-based MVPs in a record time, ready to be consumed by front-end desktop GUIs, web UIs or mobile apps.</p>
 				<p class="center"><a href="{% url 'contact' %}" class="btn btn-small btn-very-subtle">More &rarr;</a></p>
 			</div>
 			<div class="span3"> <a class="biggieicon" href="#"><i class="icon-refresh"></i></a>
 				<h4 class="border-b">Flexible but unbreakable</h4>
-				<p class="bumpdown">Our core team integrates professionales spanning different disciplines leading our client's projects and managing a variable set of collaborators. This structure allows us to be like bamboo, like... water. <a href="#">"Be water, my friend"!</a></p>
+				<p class="bumpdown">Our core team integrates professionales spanning different disciplines leading our client's projects and managing a variable set of collaborators. This structure allows us to be like bamboo, like... water. <a href="http://www.youtube.com/watch?v=9pc1pbCMRSU">"Be water, my friend"!</a></p>
 				<p class="center"><a href="{% url 'contact' %}" class="btn btn-small btn-very-subtle">More &rarr;</a></p>
 			</div>
 			<div class="span3"> <a class="biggieicon" href="#"><i class="icon-comments-alt"></i></a>
 				<h4 class="border-b">Let's talk</h4>
-				<p class="bumpdown">Nomadblue wants to become a leader in development and web-based technology implementation. Apps for mobile devices, social networks or e-commerce platforms, you name it. If you need experts to incorporate into your business plan, let's talk.</p>
+				<p class="bumpdown">Nomadblue wants to become a <strong>leader in development and web-based technology implementation</strong>. Apps for mobile devices, social networks or e-commerce platforms, you name it. If you need experts to incorporate into your business plan, let's talk.</p>
 				<p class="center"><a href="{% url 'contact' %}" class="btn btn-small btn-very-subtle">More &rarr;</a></p>
 			</div>
 		</div>
@@ -74,17 +74,14 @@
 		<hr class="empty" />
 		<h3 class="short_headline"><span>portfolio of latest works</span></h3>
 		<div class="row-fluid">
-			<div class="span6">
-        <p><a href="http://blinkmeapp.com/en/"><img class="alignleft img-polaroid" src="{% static "img/blinkme_logo.png" %}"></a>BlinkMe is a photo-sharing app that allows you to send images safely. Once opened, they can only be looked at for 3 seconds before they disappear, leaving no trace.</p>
+			<div class="span7">
+        <p><a href="http://blinkmeapp.com/en/"><img class="alignleft img-polaroid" src="{% static "img/blinkme_logo.png" %}"></a><strong>BlinkMe</strong> is a photo-sharing app that allows you to send images safely. Once opened, they can only be looked at for 3 seconds before they disappear, leaving no trace.</p>
         <hr>
-        <p><a href="http://www.canubring.com/"><img class="alignleft img-polaroid" src="{% static "img/canubring_logo.png" %}"></a>Canubring is a social network that connects people who need to buy something from any place in the world, with others who can bring it on their trips.</p>
-			</div>
-			<div class="span6">
-        <p><a href="http://dealirius.cl/"><img class="alignleft img-polaroid" src="{% static "img/dealirius_logo.png" %}"></a>Dealirius is a deals search engine that scans the main collective buying sites (like Groupon, LetsBonus or Groupalia) and offers their discounts in just one place.</p>
+        <p><a href="http://www.canubring.com/"><img class="alignleft img-polaroid" src="{% static "img/canubring_logo.png" %}"></a><strong>Canubring</strong> is a social network that connects people who need to buy something from any place in the world, with others who can bring it on their trips.</p>
+        <p><a href="http://dealirius.cl/"><img class="alignleft img-polaroid" src="{% static "img/dealirius_logo.png" %}"></a><strong>Dealirius</strong> is a deals search engine that scans the main collective buying sites (like Groupon, LetsBonus or Groupalia) and offers their discounts in just one place.</p>
         <hr>
-        <p><a href="http://eduquia.com/"><img class="alignleft img-polaroid" src="{% static "img/eduquia_logo.png" %}"></a>Eduquia is an education platform offering online apps and web tools for students, teachers and the academic ecosytem, and aiming to bring on the learning revolution.</p>
+        <p><a href="http://eduquia.com/"><img class="alignleft img-polaroid" src="{% static "img/eduquia_logo.png" %}"></a><strong>Eduquia</strong> is an education platform offering online apps and web tools for students, teachers and the academic ecosytem, and aiming to bring on the learning revolution.</p>
 			</div>
-        {% comment %}
 			<div class="span4 offset1"> 
 				<!-- ****** TABBED CONTENT ******-->
 				<aside class="widget">
@@ -99,27 +96,10 @@
 							<div id="tab-latest">
 								<ul class="blogposts clearfix">
 									<!--required class-->
-									<li> <span class="date"> <span class="month">Jan</span> <span class="day">13</span> <span class="year">2012</span> </span>
-										<h3><a href="blog-single.html">We frequently maximize turn-key infrastructures</a></h3>
-										<a href="blog-single.html">
-										<p> Your budget for unleashing should be at least twice...</p>
-										</a> </li>
-									<li> <span class="date"> <span class="month">Nov</span> <span class="day">28</span> <span class="year">2012</span> </span>
-										<h3><a href="blog-single.html">Split of a Second</a></h3>
-										<a href="blog-single.html">
-										<p> Wingsuit World Champion Espen Fadnes and...</p>
-										</a> </li>
-									<li> <span class="date"> <span class="month">Sep</span> <span class="day">18</span> <span class="year">2012</span> </span>
-										<h3><a href="blog-single.html">Latte Art</a></h3>
-										<a href="blog-single.html">
-										<p> Creating art with latte coffee. 
-											Lorem ipsum dolor sit amet... </p>
-										</a> </li>
-									<li> <span class="date"> <span class="month">Mar</span> <span class="day">3</span> <span class="year">2012</span> </span>
-										<h3><a href="blog-single.html">Lorem ipsum dolor sit amet</a></h3>
-										<a href="blog-single.html">
-										<p>senectus et netus et malesuada fames ac turpis egestas...</p>
-										</a> </li>
+                  {% get_latest_posts as latest_posts %}
+                  {% for post in latest_posts|slice:":4" %}
+                  {% include "bits/widget_blog_post_item.html" %}
+                  {% endfor %}
 								</ul>
 							</div>
 							<!-- close #tab-latest-->
@@ -127,38 +107,25 @@
 								<!--begin tab-popular-->
 								<ul class="blogposts clearfix">
 									<!--required class-->
-									<li> <span class="date"> <span class="month">Jan</span> <span class="day">13</span> <span class="year">2012</span> </span>
-										<h3><a href="blog-single.html">We frequently maximize turn-key infrastructures</a></h3>
-										<a href="blog-single.html">
-										<p> Your budget for unleashing should be at least twice...</p>
-										</a> </li>
-									<li> <span class="date"> <span class="month">Nov</span> <span class="day">28</span> <span class="year">2012</span> </span>
-										<h3><a href="blog-single.html">Split of a Second</a></h3>
-										<a href="blog-single.html">
-										<p> Wingsuit World Champion Espen Fadnes and...</p>
-										</a> </li>
-									<li> <span class="date"> <span class="month">Sep</span> <span class="day">18</span> <span class="year">2012</span> </span>
-										<h3><a href="blog-single.html">Latte Art</a></h3>
-										<a href="blog-single.html">
-										<p> Creating art with latte coffee. 
-											Lorem ipsum dolor sit amet... </p>
-										</a> </li>
-									<li> <span class="date"> <span class="month">Mar</span> <span class="day">3</span> <span class="year">2012</span> </span>
-										<h3><a href="blog-single.html">Lorem ipsum dolor sit amet</a></h3>
-										<a href="blog-single.html">
-										<p>senectus et netus et malesuada fames ac turpis egestas...</p>
-										</a> </li>
+                  {% get_popular_posts as popular_posts %}
+                  {% for post in popular_posts|slice:":4" %}
+                  {% include "bits/widget_blog_post_item.html" %}
+                  {% endfor %}
 								</ul>
 							</div>
 							<!-- close #tab-popular-->
-							<div id="tab-tags" class="tag-wrapper"> <a href="#" class="tag">business</a> <a href="#" class="tag">fun</a> <a href="#" class="tag">food</a> <a href="#" class="tag">design</a> <a href="#" class="tag">old</a> <a href="#" class="tag">recent</a> <a href="#" class="tag">junk</a> <a href="#" class="tag">important</a> <a href="#" class="tag">fonts</a> <a href="#" class="tag">css3</a> <a href="#" class="tag">php</a> <a href="#" class="tag">seamless</a> <a href="#" class="tag">complicated</a> </div>
+              <div id="tab-tags" class="tag-wrapper">
+                {% get_categories as categories %}
+                {% for category in categories %}
+                <a href="{% url 'list_posts_by_category' category.name %}">{{ category.name }}</a>
+                {% endfor %}
+              </div>
 							<!-- close #tab-tags .tag-wrapper--> 
 						</div>
 						<!--close .panels (all of them)--> 
 					</div>
 					<!--close .sidebar-tabs--> 
 				</aside>
-        {% endcomment %}
 				<!-- close .widget containing blog tabs--> 
 			</div>
 		</div>
