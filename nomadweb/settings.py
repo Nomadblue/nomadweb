@@ -100,6 +100,9 @@ LOGGING = {
 import dj_database_url
 DATABASES = {'default': dj_database_url.config(default=os.environ.get('DATABASE_URL'))}
 
+# Django Admin
+ADMIN_URL = os.environ.get('ADMIN_URL', 'admin/')
+
 # Amazon S3
 AWS_STORAGE_BUCKET_NAME = os.environ.get('AWS_STORAGE_BUCKET_NAME')
 STATICFILES_STORAGE = 'storages.backends.s3boto.S3BotoStorage'
