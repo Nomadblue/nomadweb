@@ -2,6 +2,9 @@ from django.contrib.syndication.views import Feed
 from django.db.models import Q
 from nomadblog.models import Post
 
+# Remember to put the right Site value at admin/sites/site/ (not example.com!)
+# and validate the feed with the W3C tool: http://validator.w3.org/feed/
+
 class LatestEntries(Feed):
     title = "Nomadblue.com"
     link = "/"
