@@ -5,9 +5,10 @@
   <aside class="widget clearfix">
     <h5 class="short_headline"><span>Blog Categories</span></h5>
     <ul class="navigation">
-      <li><a href="{% url 'list_posts_by_category' 'django' %}">Django</a></li>
-      <li><a href="{% url 'list_posts_by_category' 'python' %}">Python</a></li>
-      <li><a href="{% url 'list_posts_by_category' 'internet' %}">Internet</a></li>
+    {% get_categories as categories %}
+    {% for category in categories %}
+      <li><a href="{% url 'list_posts_by_category' category.name %}">{{ category.name|capfirst }}</a></li>
+    {% endfor %}
     </ul>
   </aside>
   {% comment %}
