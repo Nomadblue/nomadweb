@@ -1,5 +1,15 @@
 {% extends "base.html" %}
 
+{% block html_title %}Newsletter | Nomadblue{% endblock %}
+{% block html_desc %}Subscribe to our newsletter. You will receive an email from time to time with special deals and our latest news.{% endblock %}
+
+{% block open_graph %}
+<meta property="og:type" content="company" />
+<meta property="og:title" content="Nomadblue - Web development for startups and smart companies" />
+<meta property="og:url" content="http://nomadblue.com{% url 'subscribe' %}" />
+<meta property="og:description" content="We invest in talent to create disrupting businesses. We have the tools and the expertise for your deas." />
+{% endblock %}
+
 {% block container %}
 	<div class="hero-unit">
 		<div class="container">

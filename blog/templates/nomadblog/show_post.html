@@ -1,5 +1,15 @@
 {% extends 'base.html' %}
 
+{% block html_title %}{{ post.title }} | Nomadblue{% endblock %}
+{% block html_desc %}{{ post.summary|striptags|truncatechars:150 }}{% endblock %}
+
+{% block open_graph %}
+<meta property="og:type" content="company" />
+<meta property="og:title" content="{{ post.title }}" />
+<meta property="og:url" content="http://nomadblue.com{{ post.get_absolute_url }}" />
+<meta property="og:description" content="{{ post.summary|striptags|truncatechars:300 }}" />
+{% endblock %}
+
 {% block container %}
 <div class="container visible-phone hidden-tablet hidden-desktop">
   <p class="right"><a class="btn btn-primary" href="#secondary-nav">Blog Menu &nbsp;<i class="icon-align-justify"></i></a></p>

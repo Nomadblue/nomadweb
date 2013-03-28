@@ -7,11 +7,11 @@
 {% load staticfiles i18n %}
 
 <head>
-<title>{% block html_title %}{% endblock %}</title>
+<title>{% block html_title %}Strategy and web development for entrepreneurs, startups and smart companies | Nomadblue{% endblock %}</title>
 
 <!-- Meta Data ================ -->
 <meta charset="UTF-8" />
-<meta name="description" content="{% trans "Strategy and web development" %}">
+<meta name="description" content="{% block html_desc %}We invest in talent to create disrupting businesses. We have the tools and the expertise for your deas{% endblock %}">
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta name="apple-mobile-web-app-capable" content="yes" />
 
@@ -37,16 +37,17 @@
 http://graph.facebook.com/[UserName] replace [UserName] 
 with yours and get your fb:admis content information where the XXXX goes.
 ================================================== -->
+<meta property="og:image" content="http://nomadblue.com/img/nomadblue_logo_fb.png"/>
+<meta property="og:site_name" content="Nomadblue.com" />
+<meta property="fb:admins" content="702028905" />
+<meta property="fb:app_id" content="141204579390684" />
+<meta property="og:locale" content="en_us" />
+{% block open_graph %}
+<meta property="og:type" content="company" />
 <meta property="og:title" content="Nomadblue - Web development for startups and smart companies" />
 <meta property="og:url" content="http://nomadblue.com/" />
-<meta property="fb:admins" content="702028905" />
-<meta property="og:locale" content="en_us" />
 <meta property="og:description" content="We invest in talent to create disrupting businesses. We have the tools and the expertise for your deas." />
-{% comment %}
-<meta property="og:type" content="" />
-<meta property="og:image" content=""/>
-<meta property="og:site_name" content="" />
-{% endcomment %}
+{% endblock %}
 
 <!-- JS JQuery in the head you can use ajax if you want ================ -->
 <script src="{% static "assets/js/jquery.min.js" %}"></script>
