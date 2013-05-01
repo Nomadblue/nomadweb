@@ -1,0 +1,54 @@
+{% extends "base.html" %}
+
+{% block html_title %}Newsletter | Nomadblue{% endblock %}
+{% block html_desc %}Jobs and vacancies at Nomadblue. Work with us, we are hiring!{% endblock %}
+
+{% block open_graph %}
+<meta property="og:type" content="company" />
+<meta property="og:title" content="Jobs and vacancies at Nomadblue - Web development for startups and smart companies" />
+<meta property="og:url" content="http://nomadblue.com{% url 'jobs' %}" />
+<meta property="og:description" content="We invest in talent to create disrupting businesses. We have the tools and the expertise for your deas." />
+{% endblock %}
+
+{% block container %}
+	<div class="hero-unit">
+		<div class="container">
+			<h1>Work with us, we are hiring!</h1>
+		</div>
+		<!--close container--> 
+	</div>
+	<!--close hero-unit-->
+	
+	<div class="container clearfix" id="main-content">
+		<div class="row-fluid reverse-order contact-page">
+			<p class="clearfix">Currently these are the jobs we are offering:</p>
+			<hr />
+			<div class="span5">
+				<p class="right"> <a class="icon-map-marker various fancybox.iframe" title="Map and Directions" href="https://maps.google.com/maps?q=Alc%C3%A1ntara+200,+Santiago,+Chile&hl=en&ie=UTF8&sll=-33.668298,-70.363372&sspn=1.268678,2.463684&hnear=Alc%C3%A1ntara+200,+Las+Condes,+Santiago,+Regi%C3%B3n+Metropolitana,+Chile&t=m&z=16">&nbsp;</a> </p>
+				<p><strong>Nomadblue S.L</strong><br />
+					Alc&aacute;ntara 200, oficina 601<br />
+					Las Condes. C.P 7550159<br />
+					<strong>phone:</strong> <a href="tel:+56958791449" class="tele">+56958791449</a><br />
+          <strong>email:</strong> <a href="mailto:info@nomadblue.com">info@nomadblue.com</a> </p>
+				<h3 class="short_headline margin-top"><span>Follow Us</span></h3>
+				<ul class="social">
+					<li><a class="socicon facebook" href="#" title="Facebook"></a></li>
+					<li><a class="socicon twitterbird" href="#" title="Twitter"></a></li>
+					<li><a class="socicon linkedin" href="#" title="LinkedIn"></a></li>
+				</ul>
+			</div>
+			<!--close span5 -->
+			
+			<div class="span7">
+        <ul class="unstyled pull-left">
+          <li><p class="right"><a href="{% url 'python_jobs' %}">Python/Django web developers</a></p></li>
+        </ul>
+			</div>
+			<!--close span7 --> 
+		</div>
+		<!--close row-fluid--> 
+	</div>
+	<!--close .container role="main-content" --> 
+{% endblock %}
+
+
